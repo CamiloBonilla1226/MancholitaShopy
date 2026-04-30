@@ -106,6 +106,33 @@
       {% if block_settings.padding-block-end > 0 %}--zoom-out-padding-block-end: min(var(--padding-xs), {{ block_settings.padding-block-end | times: 0.7}}px);{% endif %}
     "
   >
+    {% assign product_card_has_image = false %}
+    {% if children contains '<img' %}
+      {% assign product_card_has_image = true %}
+    {% endif %}
+
+    {% if product != blank and product.id != empty and product_card_has_image == false %}
+      {% assign fallback_image = product.selected_or_first_available_variant.featured_image %}
+      {% if fallback_image == blank %}
+        {% assign fallback_image = product.featured_media.preview_image %}
+      {% endif %}
+
+      {% if fallback_image != blank %}
+        <div class="product-card__image-container">
+          {{
+            fallback_image
+            | image_url: width: 500
+            | image_tag:
+              loading: 'lazy',
+              class: 'product-card__image',
+              widths: '320, 480, 720, 900',
+              sizes: '100vw',
+              alt: product.title
+          }}
+        </div>
+      {% endif %}
+    {% endif %}
+
     {{ children }}
   </div>
 </product-card>
@@ -113,6 +140,19 @@
 {% stylesheet %}
   .product-card__placeholder-image svg {
     height: 100%;
+  }
+
+  .product-card__image-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .product-card__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
   }
 
   .product-card__content slideshow-component {

@@ -224,6 +224,7 @@
             "product_card_gallery_677WP3": {
               "type": "_product-card-gallery",
               "name": "t:names.product_card_media",
+              "disabled": true,
               "settings": {
                 "image_ratio": "portrait",
                 "border": "none",

@@ -115,63 +115,6 @@
         }
       })();
     </script>
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const section = document.querySelector('.product-list'); // ajusta según tu tema
-  const allCards = Array.from(section.querySelectorAll('.product-card')); // ajusta según tu tema
-  const visible = 4;
-  let current = 0;
-  let timer = null;
-
-  // Mezclar array aleatoriamente
-  function shuffle(arr) {
-    return [...arr].sort(() => Math.random() - 0.5);
-  }
-
-  let shuffled = shuffle(allCards);
-
-  // Mostrar los 4 productos actuales
-  function showProducts() {
-    allCards.forEach(c => c.style.display = 'none');
-    shuffled.slice(current, current + visible).forEach(c => c.style.display = '');
-  }
-
-  // Avanzar al siguiente grupo aleatorio
-  function nextGroup() {
-    current += visible;
-    if (current >= shuffled.length) {
-      current = 0;
-      shuffled = shuffle(allCards); // nueva mezcla al dar la vuelta
-    }
-    showProducts();
-  }
-
-  // Reiniciar el temporizador de 10 segundos
-  function resetTimer() {
-    clearInterval(timer);
-    timer = setInterval(nextGroup, 10000);
-  }
-
-  // Flecha siguiente
-  section.querySelector('.next-arrow')?.addEventListener('click', () => {
-    nextGroup();
-    resetTimer(); // reinicia el contador al presionar
-  });
-
-  // Flecha anterior
-  section.querySelector('.prev-arrow')?.addEventListener('click', () => {
-    current = Math.max(0, current - visible);
-    showProducts();
-    resetTimer(); // reinicia el contador al presionar
-  });
-
-  // Mostrar productos iniciales e iniciar temporizador
-  showProducts();
-  resetTimer();
-});
-</script>
-
-
     <main
       id="MainContent"
       class="content-for-layout"

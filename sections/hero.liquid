@@ -465,6 +465,9 @@
     {% else %}
       --hero-min-height: var(--section-height-{{ section.settings.section_height }});
     {% endif %}
+    {% if section.settings.custom_mobile_height %}
+      --hero-mobile-min-height: {{ section.settings.section_height_mobile_custom }}svh;
+    {% endif %}
   "
   {% if request.visual_preview_mode %}
     data-shopify-visual-preview
@@ -638,6 +641,11 @@
   }
 
   @media screen and (max-width: 749px) {
+    .hero,
+    .hero[data-shopify-visual-preview] {
+      min-height: calc(var(--hero-mobile-min-height, var(--hero-min-height)) - var(--hero-height-offset));
+    }
+
     .hero__media-wrapper--desktop {
       display: none;
     }
@@ -1138,6 +1146,23 @@
       "default": 50,
       "unit": "%",
       "visible_if": "{{ section.settings.section_height == 'custom' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "custom_mobile_height",
+      "label": "Altura móvil personalizada",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "section_height_mobile_custom",
+      "label": "Altura móvil",
+      "min": 30,
+      "max": 100,
+      "step": 1,
+      "default": 48,
+      "unit": "%",
+      "visible_if": "{{ section.settings.custom_mobile_height }}"
     },
     {
       "type": "header",

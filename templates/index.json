@@ -16,7 +16,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h3><br/>Te va a gustar cómo se ve<br/> y más cómo te queda.<br/><br/></h3>",
+            "text": "<h3>Te va a gustar cómo se ve<br/>y más cómo te queda.</h3>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -38,24 +38,6 @@
           },
           "blocks": {}
         },
-        "ai_gen_block_2cce166_PPAT8L": {
-          "type": "ai_gen_block_2cce166",
-          "settings": {
-            "heading": "",
-            "text": "<h4>A veces solo estas mirando..<br/> hasta que algo te hace clic...</h4><h4></h4>",
-            "text_alignment": "center",
-            "desktop_width_percent": 100,
-            "padding_top": 20,
-            "padding_bottom": 20,
-            "padding_horizontal": 20,
-            "heading_spacing": 10,
-            "heading_size": 16,
-            "text_size": 16,
-            "heading_color": "#ffffff",
-            "text_color": "#ffffff"
-          },
-          "blocks": {}
-        },
         "button_H9gpTf": {
           "type": "button",
           "name": "t:names.button",
@@ -74,7 +56,6 @@
       },
       "block_order": [
         "text_YLPk4p",
-        "ai_gen_block_2cce166_PPAT8L",
         "button_H9gpTf"
       ],
       "name": "t:names.hero",
@@ -99,6 +80,8 @@
         "section_width": "page-width",
         "section_height": "medium",
         "section_height_custom": 50,
+        "custom_mobile_height": true,
+        "section_height_mobile_custom": 48,
         "color_scheme": "scheme-6",
         "toggle_overlay": true,
         "overlay_color": "#12121299",
@@ -123,9 +106,9 @@
             "horizontal_alignment": "space-between",
             "vertical_alignment": "flex-end",
             "align_baseline": true,
-            "horizontal_alignment_flex_direction_column": "flex-start",
+            "horizontal_alignment_flex_direction_column": "center",
             "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
+            "gap": 6,
             "width": "fill",
             "custom_width": 100,
             "width_mobile": "fill",
@@ -151,7 +134,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h1>EXPLORA TU ESTILO</h1><p></p>",
+                "text": "<h2>¿Qué estás buscando?</h2>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -159,7 +142,7 @@
                 "font": "var(--font-accent--family)",
                 "font_size": "2rem",
                 "line_height": "tight",
-                "letter_spacing": "tight",
+                "letter_spacing": "normal",
                 "case": "none",
                 "wrap": "pretty",
                 "color": "var(--color-foreground-heading)",
@@ -168,6 +151,32 @@
                 "corner_radius": 0,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_lo_mas_nuevo": {
+              "type": "text",
+              "name": "Subtítulo",
+              "settings": {
+                "text": "<p>lo más nuevo</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "custom",
+                "font": "var(--font-subheading--family)",
+                "font_size": "0.875rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 4,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -190,6 +199,7 @@
           },
           "block_order": [
             "text_EeCFrj",
+            "text_lo_mas_nuevo",
             "product_list_button_MWeP9V"
           ]
         },
@@ -198,7 +208,7 @@
           "name": "t:names.product_card",
           "static": true,
           "settings": {
-            "product_card_gap": 4,
+            "product_card_gap": 8,
             "inherit_color_scheme": true,
             "color_scheme": "",
             "border": "none",
@@ -215,11 +225,11 @@
               "type": "_product-card-gallery",
               "name": "t:names.product_card_media",
               "settings": {
-                "image_ratio": "adapt",
+                "image_ratio": "portrait",
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
-                "border_radius": 0,
+                "border_radius": 8,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -292,16 +302,16 @@
         "columns": 4,
         "mobile_columns": "2",
         "mobile_card_size": "60cqw",
-        "columns_gap": 8,
+        "columns_gap": 14,
         "rows_gap": 24,
         "icons_style": "arrow",
         "icons_shape": "none",
         "section_width": "page-width",
         "horizontal_alignment": "flex-start",
-        "gap": 28,
+        "gap": 24,
         "color_scheme": "scheme-1",
-        "padding-block-start": 48,
-        "padding-block-end": 24
+        "padding-block-start": 36,
+        "padding-block-end": 40
       }
     },
     "section_6MJ6Rf": {

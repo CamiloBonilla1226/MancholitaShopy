@@ -355,5 +355,12 @@
       "success_moderated": "Comentario publicado y a la espera de moderación",
       "success": "Comentario publicado"
     }
+  },
+  "shopify": {
+    "checkout": {
+      "contact": {
+        "email_or_phone_label": "Número de teléfono"
+      }
+    }
   }
 }

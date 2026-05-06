@@ -361,6 +361,9 @@
       "contact": {
         "email_or_phone_label": "Número de teléfono"
       }
+    },
+    "links": {
+      "powered_by_shopify": "Viste con estilo"
     }
   }
 }
